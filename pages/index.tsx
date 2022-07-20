@@ -1,3 +1,5 @@
+import { Conditional } from "components/Conditional";
+import { Counter } from "components/Counter";
 import type { GetServerSideProps, NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
@@ -22,7 +24,9 @@ const Home: NextPage<Props> = ({ data }: Props) => {
       <div className={styles.container}>
         <h1 id="test-jest">Test Next Jest</h1>
 
-        <div></div>
+        <Counter />
+
+        <Conditional />
       </div>
     </>
   );
