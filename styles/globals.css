@@ -14,3 +14,12 @@ a {
 * {
   box-sizing: border-box;
 }
+
+button {
+  cursor: pointer;
+  padding: 5px 15px;
+}
+
+input {
+  padding: 5px 15px;
+}

@@ -1,6 +1,6 @@
 import { render, fireEvent, screen } from "@testing-library/react";
-import { Counter } from "components/Counter";
 import "@testing-library/jest-dom/extend-expect";
+import { Counter } from "components/Counter";
 
 describe("Counter test:", () => {
   //  test block 01

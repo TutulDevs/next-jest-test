@@ -1,6 +1,12 @@
 export {};
 
+export interface Console {
+  log: string;
+  alert: Function;
+}
+
 declare global {
+  type test2 = Function;
   interface Geo {
     lat: string;
     lng: string;
