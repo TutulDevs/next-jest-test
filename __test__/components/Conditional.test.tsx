@@ -1,12 +1,8 @@
 import { render, screen, fireEvent } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
-import userEvent from "@testing-library/user-event";
 import { Conditional } from "components/Conditional";
 
 describe("Conditional rendering: ", () => {
-  // const btn = screen.getByTestId("showHideBtn");
-  // const content = screen.getByTestId("showContent");
-
   it("should show the button", () => {
     render(<Conditional />);
 
@@ -16,7 +12,7 @@ describe("Conditional rendering: ", () => {
   it("should show the '---' initially", () => {
     render(<Conditional />);
 
-    expect(screen.getByTestId("showContent")).not.toHaveTextContent("😎");
+    expect(screen.getByTestId("showContent")).toHaveTextContent("---");
   });
 
   it("should show the emoji", () => {
