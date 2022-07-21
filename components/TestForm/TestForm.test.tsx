@@ -16,7 +16,7 @@ describe("<TestForm />", () => {
     render(<TestForm />);
 
     const inputEl = screen.getByTestId("email-input");
-    userEvent.type(inputEl, "test@test.co");
+    userEvent.type(inputEl, "test@test.com");
 
     await waitFor(() =>
       expect(screen.getByTestId("email-input")).toHaveValue("test@test.com")
