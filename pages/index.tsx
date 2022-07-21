@@ -1,10 +1,10 @@
 import { Conditional } from "components/Conditional";
 import { Counter } from "components/Counter";
-import { LoginForm } from "components/LoginForm";
+import { LoginForm } from "components/LoginForm/LoginForm";
+import { TestForm } from "components/TestForm/TestForm";
 import type { GetServerSideProps, NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
-import { testAx } from "test";
 import styles from "../styles/Home.module.css";
 
 interface Props {
@@ -14,10 +14,6 @@ interface Props {
 const Home: NextPage<Props> = ({ data }: Props) => {
   // console.log(data);
   // console.log(data.length.toLocaleString("bn-BD"));
-
-  const testFn: test2 = () => {};
-
-  console.log(testAx());
 
   return (
     <>
@@ -35,6 +31,8 @@ const Home: NextPage<Props> = ({ data }: Props) => {
         <Conditional />
 
         <LoginForm />
+
+        <TestForm />
       </div>
     </>
   );
