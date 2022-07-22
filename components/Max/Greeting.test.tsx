@@ -24,15 +24,26 @@ describe("Greeting", () => {
     ).toBeInTheDocument();
   });
 
-  test("renders changed para text on button click", () => {
+  test("renders changed para text on button click", async () => {
     // Arrange
     render(<Greeting />);
 
     // Act
-    userEvent.click(screen.getByRole("button"));
+    const user = userEvent.setup();
+    await user.click(screen.getByRole("button"));
 
     // Assert
     const outputElem = screen.getByText("Changed!");
     expect(outputElem).toBeInTheDocument();
+  });
+
+  test("remove the initial para text after btn click", async () => {
+    render(<Greeting />);
+
+    const user = userEvent.setup();
+    await user.click(screen.getByRole("button"));
+
+    const outputElem = screen.queryByText("feels good!", { exact: false });
+    expect(outputElem).toBeNull();
   });
 });

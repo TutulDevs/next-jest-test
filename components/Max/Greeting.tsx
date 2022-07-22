@@ -9,6 +9,7 @@ export const Greeting = () => {
     <div>
       <h2>Hello World!</h2>
 
+      {/* <p>It feels good!</p> */}
       {!changedText && <p>It feels good!</p>}
 
       {changedText && <p>Changed!</p>}
