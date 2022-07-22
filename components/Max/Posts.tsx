@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { getPostsApi } from "__test__/api";
 
 interface PostType {
   userId: number;
@@ -10,9 +9,27 @@ interface PostType {
 
 export const Posts = () => {
   const [posts, setPosts] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
-    getPostsApi().then((data) => setPosts(data));
+    const fetchPosts = async () => {
+      try {
+        setIsLoading(true);
+
+        const res = await fetch("https://jsonplaceholder.typicode.com/posts");
+        const data = await res.json();
+
+        setPosts(data);
+
+        setIsLoading(false);
+      } catch (err) {
+        // console.log("invalid response!");
+        setPosts([]);
+        setIsLoading(false);
+      }
+    };
+
+    fetchPosts();
   }, []);
 
   return (
