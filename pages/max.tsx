@@ -1,4 +1,5 @@
 import { Greeting } from "components/Max/Greeting";
+import { Posts } from "components/Max/Posts";
 import type { NextPage } from "next";
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
@@ -15,6 +16,8 @@ const Home: NextPage = () => {
         <h1 id="test-jest">Test Next Jest - From Max&apos;s Course</h1>
 
         <Greeting />
+
+        <Posts />
       </div>
     </>
   );
