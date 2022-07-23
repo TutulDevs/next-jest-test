@@ -23,3 +23,19 @@ button {
 input {
   padding: 5px 15px;
 }
+
+.form-group {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 8px 0;
+}
+
+.form-group label {
+  width: 150px;
+}
+
+.errorText {
+  color: salmon;
+  font-weight: 500;
+}
